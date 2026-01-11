@@ -5,3 +5,4 @@
   - Create repository
 - https://github.com/settings/installations/70874322
   - Add repo
+- `./script.sh`
