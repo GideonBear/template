@@ -39,6 +39,8 @@ repos:
     hooks:
       # General
       - id: pre-commit-ci-skip
+      # Gha
+      - id: gha-pin
 
   # General
 
@@ -68,3 +70,17 @@ repos:
           - mdformat-gfm
           - mdformat-gfm-alerts
           - mdformat-toc
+
+  # Gha
+
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.9
+    hooks:
+      - id: actionlint
+
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: v1.19.0
+    hooks:
+      - id: zizmor
+        args: [--persona=auditor]
+        exclude: ^.github/workflows/release.yml$

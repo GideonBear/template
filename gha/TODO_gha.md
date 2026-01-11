@@ -1,1 +1,0 @@
-- Merge GHA_MERGE.pre-commit-config.yaml
