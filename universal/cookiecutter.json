@@ -6,6 +6,7 @@
     "pypi_username": "{{ cookiecutter.github_username }}",
     "__gh_slug": "{{ cookiecutter.github_username }}/{{ cookiecutter.dash_name }}",
     "_copy_without_render": [
-        ".github/workflows/*.yml"
+        ".github/workflows/*.yml",
+        ".github/*renovate.json5"
     ]
 }

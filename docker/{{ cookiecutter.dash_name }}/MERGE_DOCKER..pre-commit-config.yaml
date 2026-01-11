@@ -1,0 +1,25 @@
+repos:
+  - repo: https://github.com/GideonBear/pre-commit-hooks
+    hooks:
+      # Docker
+      - id: docker-image-pin
+      - id: docker-apt-renovate
+
+  # Docker
+
+  - repo: https://github.com/docker-compose-linter/pre-commit-dclint
+    rev: v3.1.0
+    hooks:
+      - id: dclint
+        args: [--fix, --max-warnings=0]
+
+  - repo: https://github.com/reteps/dockerfmt
+    rev: v0.3.9
+    hooks:
+      - id: dockerfmt
+
+  - repo: https://github.com/AleksaC/hadolint-py
+    rev: v2.14.0
+    hooks:
+      - id: hadolint
+        args: [--failure-threshold=style]
