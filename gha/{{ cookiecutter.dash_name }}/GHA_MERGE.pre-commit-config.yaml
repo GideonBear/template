@@ -1,0 +1,19 @@
+repos:
+  - repo: https://github.com/GideonBear/pre-commit-hooks
+    hooks:
+      # Gha
+      - id: gha-pin
+
+  # Gha
+
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.9
+    hooks:
+      - id: actionlint
+
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: v1.19.0
+    hooks:
+      - id: zizmor
+        args: [--persona=auditor]
+        exclude: ^.github/workflows/release.yml$
