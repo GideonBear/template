@@ -15,6 +15,7 @@ git status
 echo "Exit shell to continue or cancel"
 bash
 echo "Press enter to continue, ctrl+c to quit"
+# shellcheck disable=SC2162
 read
 git commit -m "Initial commit"
 git remote add origin https://github.com/{{ cookiecutter.__gh_slug }}
