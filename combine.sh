@@ -13,3 +13,5 @@ mkdir your-cookiecutter
 for arg in "$@"; do
     rsync -a "$arg/" "your-cookiecutter/"
 done
+
+cookiecutter your-cookiecutter

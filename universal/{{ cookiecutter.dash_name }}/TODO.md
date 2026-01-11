@@ -5,4 +5,6 @@
   - Create repository
 - https://github.com/settings/installations/70874322
   - Add repo
+- Merge and remove all `MERGE_*`
+- Do and remove all `TODO_*`
 - `./script.sh`
