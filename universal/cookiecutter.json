@@ -4,5 +4,8 @@
     "under_name": "{{ cookiecutter.dash_name.replace('-', '_') }}",
     "github_username": "GideonBear",
     "pypi_username": "{{ cookiecutter.github_username }}",
-    "__gh_slug": "{{ cookiecutter.github_username }}/{{ cookiecutter.dash_name }}"
+    "__gh_slug": "{{ cookiecutter.github_username }}/{{ cookiecutter.dash_name }}",
+    "_copy_without_render": [
+        ".github/workflows/*.yml"
+    ]
 }
