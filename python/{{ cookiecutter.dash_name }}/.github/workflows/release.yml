@@ -1,0 +1,50 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  create_release:
+    name: Create release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Create release
+        id: create_release
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
+
+  #      - name: Output release url file
+  #        run: echo "${{ steps.create_release.outputs.upload_url }}" > release_url.txt
+
+  #      - name: Save release url file for publish
+  #        uses: actions/upload-artifact@v1
+  #        with:
+  #          name: release_url
+  #          path: release_url.txt
+
+  publish_pypi:
+    name: Build and publish package
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+    permissions:
+      # For PyPI's trusted publishing.
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@61cb8a9741eeb8a550a1b8544337180c0fc8476b # v7.2.0
+        with:
+          enable-cache: true
+
+      - name: Build
+        run: uv build
+
+      - name: Publish
+        run: uv publish

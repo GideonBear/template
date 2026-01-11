@@ -1,0 +1,36 @@
+name: pre-commit autofix
+
+on:
+  pull_request:
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  main:
+    name: pre-commit autofix
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # (read) actions/checkout, (write) stefanzweifel/git-auto-commit-action
+
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          # If not specified, actions/checkout checks out in detached HEAD state,
+          #  while git-auto-commit-action needs a branch to push to
+          ref: ${{ github.head_ref }}
+          persist-credentials: true # zizmor: ignore[artipacked] # necessary for stefanzweifel/git-auto-commit-action
+
+      - uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548 # v6.1.0
+        with:
+          python-version: 3.x
+
+      - uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
+
+      - uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        if: always()
+        with:
+          commit_message: pre-commit autofixes

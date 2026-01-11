@@ -1,0 +1,14 @@
+- In pyproject.toml, fill `requires-python`:
+  - App: latest
+  - Lib: latest non-EOL
+  - If you deviate:
+    - update README.md "Python version support" accordingly
+    - app:
+      - remove requires-python bumping from renovate.json5
+- https://pypi.org/manage/account/publishing/ Add a new pending publisher
+  - GitHub
+  - PyPI Project Name: {{ cookiecutter.dash_name }}
+  - Owner: {{ cookiecutter.github_username }}
+  - Repository name: {{ cookiecutter.dash_name }}
+  - Workflow name: release.yml
+  - Environment name: pypi

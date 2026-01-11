@@ -1,0 +1,53 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    hooks:
+      # Python
+      # - id: check-ast  # ruff-format and ruff-check already do this
+      # - id: check-builtin-literals  # mostly done by ruff-check (UP018 and C408)
+      # - id: double-quote-string-fixer  # quotes are done by ruff-format and ruff-check
+      - id: debug-statements
+      - id: name-tests-test
+        args: [--pytest-test-first]
+
+  - repo: https://github.com/GideonBear/pre-commit-hooks
+    hooks:
+      # Python
+      - id: pre-commit-additional-dependencies
+      - id: requires-python
+
+  # Python
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.10
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.19.1
+    hooks:
+      - id: mypy
+        pass_filenames: false # Check all files to be thorough
+        args: [.] # Removes default `--ignore-missing-imports`
+
+  - repo: https://github.com/tox-dev/pyproject-fmt
+    rev: v2.11.1
+    hooks:
+      - id: pyproject-fmt
+
+  - repo: https://github.com/francescorubbo/deptry-pre-commit
+    rev: v0.24.0.1
+    hooks:
+      - id: deptry
+        args: [src]
+
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.9.18
+    hooks:
+      - id: uv-lock
+
+  - repo: https://github.com/sco1/pre-commit-python-eol
+    rev: v2025.12.1
+    hooks:
+      - id: check-eol-cached
