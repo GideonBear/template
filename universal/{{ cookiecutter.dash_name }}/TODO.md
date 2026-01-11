@@ -1,0 +1,7 @@
+- https://github.com/new
+  - Repository name: {{ cookiecutter.dash_name }}
+  - Description: {{ cookiecutter.description }}
+  - Choose visibility: Public/Private
+  - Create repository
+- https://github.com/settings/installations/70874322
+  - Add repo
