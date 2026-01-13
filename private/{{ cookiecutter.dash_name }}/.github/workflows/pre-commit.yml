@@ -3,6 +3,7 @@ name: pre-commit checks
 on:
   push:
     branches: [main]
+
 permissions: {}
 
 concurrency:
