@@ -39,8 +39,9 @@ repos:
     rev: v1.12.0
     hooks:
       # General
-      - id: gha-pin
       - id: pre-commit-ci-skip
+      # Gha
+      - id: gha-pin
       # Shell
       - id: shfuncdecfmt
       - id: set-euo-pipefail
@@ -73,6 +74,20 @@ repos:
           - mdformat-gfm
           - mdformat-gfm-alerts
           - mdformat-toc
+
+  # Gha
+
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.10
+    hooks:
+      - id: actionlint
+
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: v1.20.0
+    hooks:
+      - id: zizmor
+        args: [--persona=auditor]
+        exclude: ^.github/workflows/release.yml$|^python/{{ cookiecutter.dash_name }}/.github/workflows/release.yml$
 
   # Shell
 
