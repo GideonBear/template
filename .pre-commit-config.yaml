@@ -45,6 +45,8 @@ repos:
       # Shell
       - id: shfuncdecfmt
       - id: set-euo-pipefail
+      # General - post
+      - id: pre-commit-config-fmt
 
   # General
 

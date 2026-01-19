@@ -41,6 +41,8 @@ repos:
       - id: pre-commit-ci-skip
       # Gha
       - id: gha-pin
+      # General - post
+      - id: pre-commit-config-fmt
 
   # General
 
