@@ -3,6 +3,7 @@
   - https://crates.io/crates/falconf/settings > Trusted Publishing > Add
     - Workflow filename: release-plz.yml
     - Environment name: crates_io
+    - Enable "Require trusted publishing for all new versions"
   - TODO: eerste release moet handmatig. Gewoon een hello world 0.1.0 publishen?
     - TODO: daarover gesproken crates_io tokens voor machines moeten in setuplinux denk ik
   - TODO: dit ook also cookiecutter-rustapp en cookiecutter-rustlib
