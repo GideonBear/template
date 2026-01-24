@@ -13,7 +13,6 @@ repos:
     hooks:
       # Python
       - id: pre-commit-additional-dependencies
-      - id: requires-python
 
   # Python
 
