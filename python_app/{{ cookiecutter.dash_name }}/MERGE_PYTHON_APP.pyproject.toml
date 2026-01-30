@@ -1,7 +1,2 @@
 [project]
-scripts.{{ cookiecutter.dash_name }} = "{{ cookiecutter.under_name }}:main"
-
-[tool.ruff]
-lint.ignore = [
-    "RUF067", # For apps I disagree
-]
+scripts.{{ cookiecutter.dash_name }} = "{{ cookiecutter.under_name }}.main:main"
