@@ -11,7 +11,7 @@ gh api --method PATCH /repos/{{ cookiecutter.__gh_slug }} -f allow_merge_commit=
 git init
 pre-commit autoupdate
 git add .
-pre-commit run -a
+pre-commit run -a || true
 git diff
 git add .
 git status
