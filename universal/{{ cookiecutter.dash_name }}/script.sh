@@ -7,6 +7,7 @@ mv -i "$0" ..
 
 gh api --method PUT /repos/{{ cookiecutter.__gh_slug }}/subscription -f subscribed=true
 gh api --method PATCH /repos/{{ cookiecutter.__gh_slug }} -f allow_merge_commit=false
+gh api --method PUT /repos/{{ cookiecutter.__gh_slug }}/immutable-releases
 
 git init
 pre-commit autoupdate
