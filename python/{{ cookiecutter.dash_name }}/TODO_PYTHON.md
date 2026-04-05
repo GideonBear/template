@@ -5,6 +5,7 @@
     - update README.md "Python version support" accordingly
     - app:
       - remove requires-python bumping from renovate.json5
+- On https://pypi.org/classifiers/, mainly under "Topic :: ", look for relevant classifiers and add to pyproject.toml
 - https://pypi.org/manage/account/publishing/ Add a new pending publisher
   - GitHub
   - PyPI Project Name: {{ cookiecutter.dash_name }}

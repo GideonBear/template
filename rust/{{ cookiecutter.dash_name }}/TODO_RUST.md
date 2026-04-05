@@ -5,3 +5,5 @@
   - Workflow filename: release-plz.yml
   - Environment name: crates_io
   - Enable "Require trusted publishing for all new versions"
+- In Cargo.toml, add relevant keywords in `keywords`
+- On https://crates.io/category_slugs, look for relevant categories and add to Cargo.toml `categories`
