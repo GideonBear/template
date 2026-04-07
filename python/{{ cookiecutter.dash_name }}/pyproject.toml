@@ -25,6 +25,7 @@ urls.homepage = "https://github.com/{{ cookiecutter.__gh_slug }}"
 
 [tool.ruff]
 format.preview = true
+format.nested-string-quote-style = "preferred"
 lint.select = [
     "ALL",
     "DTZ002", # Useful outside of timezones
