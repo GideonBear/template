@@ -85,7 +85,7 @@ repos:
       - id: actionlint
 
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
-    rev: v1.23.1
+    rev: v1.24.0
     hooks:
       - id: zizmor
         args: [--no-progress, --persona=auditor]
@@ -103,7 +103,7 @@ repos:
         args: [--external-sources, -e, SC1083]
 
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.13.0-1
+    rev: v3.13.1-1
     hooks:
       - id: shfmt
         args: [--write, --simplify, --indent=4]
