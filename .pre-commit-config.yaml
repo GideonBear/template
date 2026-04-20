@@ -85,7 +85,7 @@ repos:
       - id: actionlint
 
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
-    rev: v1.24.0
+    rev: v1.24.1
     hooks:
       - id: zizmor
         args: [--no-progress, --persona=auditor]
