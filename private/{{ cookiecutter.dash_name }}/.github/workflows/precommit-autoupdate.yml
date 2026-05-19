@@ -15,8 +15,8 @@ jobs:
   precommit-autoupdate:
     name: pre-commit autoupdate
     permissions:
-      contents: write # (read) actions/checkout, (write) peter-evans/create-pull-request
-      pull-requests: write # peter-evans/create-pull-request
+      contents: write # (read) actions/checkout, (write) git push
+      pull-requests: write # gh pr create
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
