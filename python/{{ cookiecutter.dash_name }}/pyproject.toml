@@ -60,7 +60,7 @@ show_error_context = true
 show_error_codes = true
 pretty = true
 warn_unused_configs = true
-strict = true  # All strict checks are already listed below, only here for future-proofing
+strict = true  # All strict checks are already listed here, only here for future-proofing
 # It already warns for the import, so we do not want to warn for each individual use.
 # If the import is silenced, there's nothing else we can do so silence the uses as well.
 # disallow_any_unimported = true
