@@ -13,6 +13,10 @@ git init
 pre-commit autoupdate
 git add .
 pre-commit run -a || true
+echo "You will now be shown the diff from the initial pre-commit run. Press enter to continue."
+# shellcheck disable=SC2162
+read
+uv venv --clear
 git diff
 git add .
 git status
