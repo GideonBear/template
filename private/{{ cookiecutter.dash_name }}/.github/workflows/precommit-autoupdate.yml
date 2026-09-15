@@ -34,6 +34,14 @@ jobs:
       - name: Run pre-commit autoupdate
         run: pre-commit autoupdate
 
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-3|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
+
+      - name: Apply pre-commit autofixes
+        run: pre-commit run --show-diff-on-failure --color=always --all-files
+
       - name: Create Pull Request
         run: |
           branch_name="precommit-autoupdate"
