@@ -1,0 +1,2 @@
+- If necessary, add as a hostile fork in bin/git-sync
+- If necessary, add to inline source in my-all-repos
