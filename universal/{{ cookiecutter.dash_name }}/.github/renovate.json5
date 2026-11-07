@@ -7,4 +7,5 @@
         ":disableRateLimiting",
         "schedule:weekly",
     ],
+    maxMajorIncrement: 0,
 }
